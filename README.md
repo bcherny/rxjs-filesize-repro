@@ -9,14 +9,18 @@ yarn build
 
 ## Results
 
-With `"module": "commonjs"` in tsconfig.json:
+With `"module": "commonjs"` vs `"module": "es2015"` in tsconfig.json:
 
-```
-bundle.js  79.6 KiB
-```
+### Before patch
 
-With `"module": "es2015"` in tsconfig.json:
+| | `"module": "commonjs"` | `"module": "es2015"` |
+|-|-|-|
+| rxjs | 79.6 KiB | 14.7 KiB |
+| rxjs-compat | 80 KiB | 80.1 KiB
 
-```
-bundle.js  14.7 KiB
-```
+### After patch
+
+| | `"module": "commonjs"` | `"module": "es2015"` |
+|-|-|-|
+| rxjs | 79.6 KiB | 14.7 KiB |
+| rxjs-compat | 18.6 KiB | 18.7 KiB
